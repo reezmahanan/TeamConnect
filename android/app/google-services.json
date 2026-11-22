@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782985719909",
+    "project_id": "team-connect-76385",
+    "storage_bucket": "team-connect-76385.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782985719909:android:6f2b10e0277fedf611968c",
+        "android_client_info": {
+          "package_name": "com.example.team_connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXeZuCsLmTzUP_RQeXQlNgM3tzM-3x1CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
