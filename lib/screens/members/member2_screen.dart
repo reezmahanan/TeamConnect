@@ -112,7 +112,7 @@ class _Member2ScreenState extends State<Member2Screen> {
                   child: const CircleAvatar(
                     radius: 54,
                     backgroundColor: _accentMint,
-                    backgroundImage: AssetImage('assets/images/wageesha.jpg'),
+                    backgroundImage: AssetImage('assets/images/wageesha.jpeg'),
                   ),
                 ),
                 const SizedBox(height: 12),
