@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -69,40 +69,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(22),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF4F46E5), Color(0xFF312E81)],
-                        ),
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: const Icon(
-                        Icons.groups_rounded,
-                        color: Colors.white,
-                        size: 55,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Text(
-                      'TeamConnect',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Text(
-                      'Connect. Collaborate. Inspire.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white54),
+                    Image.asset(
+                      'assets/branding/teamconnect_logo.png',
+                      height: 150,
+                      fit: BoxFit.contain,
                     ),
                     const SizedBox(height: 45),
                     const Text(
                       'Welcome back',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color(0xFF1E40AF),
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                       ),
@@ -110,13 +86,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 8),
                     const Text(
                       'Sign in to explore your team',
-                      style: TextStyle(color: Colors.white54),
+                      style: TextStyle(color: Color(0xFF64748B)),
                     ),
                     const SizedBox(height: 25),
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Color(0xFF0F172A)),
                       decoration: _inputDecoration(
                         'Email address',
                         Icons.email_outlined,
@@ -136,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormField(
                       controller: _passwordController,
                       obscureText: _obscurePassword,
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Color(0xFF0F172A)),
                       decoration:
                           _inputDecoration(
                             'Password',
@@ -147,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 _obscurePassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: Colors.white54,
+                                color: const Color(0xFF64748B),
                               ),
                               onPressed: () => setState(
                                 () => _obscurePassword = !_obscurePassword,
@@ -177,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : _login,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF6366F1),
+                          backgroundColor: const Color(0xFF2563EB),
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
@@ -206,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'ITUM • Mobile Communication\nGroup Profile Application 2026',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white38,
+                        color: Color(0xFF94A3B8),
                         fontSize: 12,
                         height: 1.6,
                       ),
@@ -224,17 +200,17 @@ class _LoginScreenState extends State<LoginScreen> {
   InputDecoration _inputDecoration(String label, IconData icon) {
     return InputDecoration(
       labelText: label,
-      labelStyle: const TextStyle(color: Colors.white54),
-      prefixIcon: Icon(icon, color: const Color(0xFFA5B4FC)),
+      labelStyle: const TextStyle(color: Color(0xFF64748B)),
+      prefixIcon: Icon(icon, color: const Color(0xFF2563EB)),
       filled: true,
-      fillColor: const Color(0xFF1E293B),
+      fillColor: const Color(0xFFEFF6FF),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(color: Color(0xFF6366F1), width: 2),
+        borderSide: const BorderSide(color: Color(0xFF2563EB), width: 2),
       ),
     );
   }

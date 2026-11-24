@@ -22,8 +22,13 @@ class TeamConnectApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TeamConnect',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF2563EB),
+          primary: const Color(0xFF2563EB),
+          surface: Colors.white,
+        ),
         useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: const AuthGate(),
     );
@@ -39,10 +44,21 @@ class AuthGate extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(
-            backgroundColor: Color(0xFF0F172A),
+          return Scaffold(
+            backgroundColor: Colors.white,
             body: Center(
-              child: CircularProgressIndicator(color: Color(0xFF818CF8)),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/branding/teamconnect_logo.png',
+                    width: 260,
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 24),
+                  const CircularProgressIndicator(color: Color(0xFF2563EB)),
+                ],
+              ),
             ),
           );
         }

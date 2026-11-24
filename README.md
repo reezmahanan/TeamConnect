@@ -1,5 +1,9 @@
 # TeamConnect – Group Profile Application
 
+<p align="center">
+  <img src="assets/branding/teamconnect_logo.png" alt="TeamConnect - Connect. Collaborate. Grow." width="720">
+</p>
+
 TeamConnect is a responsive mobile group profile application developed
 using Flutter and Firebase Authentication for nine NDT Information
 Technology students at the Institute of Technology, University of

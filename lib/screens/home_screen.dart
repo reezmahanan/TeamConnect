@@ -94,13 +94,27 @@ class _HomeScreenState extends State<HomeScreen> {
     }).toList();
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0F172A),
-        foregroundColor: Colors.white,
-        title: const Text(
-          'TeamConnect',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFF1E40AF),
+        titleSpacing: 8,
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/branding/teamconnect_icon.png',
+              width: 38,
+              height: 38,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'TeamConnect',
+              style: TextStyle(
+                color: Color(0xFF1E40AF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
         actions: [
           IconButton(
@@ -124,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(22),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [Color(0xFF4F46E5), Color(0xFF312E81)],
+                          colors: [Color(0xFF2563EB), Color(0xFF1E40AF)],
                         ),
                         borderRadius: BorderRadius.circular(22),
                       ),
@@ -169,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             '9 team members',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFF1E40AF),
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
@@ -181,13 +195,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             vertical: 8,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1E293B),
+                            color: const Color(0xFFEFF6FF),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: const Text(
                             'NDT • IT',
                             style: TextStyle(
-                              color: Color(0xFFA5B4FC),
+                              color: Color(0xFF2563EB),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -198,13 +212,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextField(
                       controller: _searchController,
                       onChanged: (value) => setState(() => _query = value),
-                      style: const TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Color(0xFF0F172A)),
                       decoration: InputDecoration(
                         hintText: 'Search by name or registration number',
-                        hintStyle: const TextStyle(color: Colors.white38),
+                        hintStyle: const TextStyle(color: Color(0xFF94A3B8)),
                         prefixIcon: const Icon(
                           Icons.search,
-                          color: Colors.white54,
+                          color: Color(0xFF2563EB),
                         ),
                         suffixIcon: _query.isEmpty
                             ? null
@@ -215,11 +229,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 },
                                 icon: const Icon(
                                   Icons.close,
-                                  color: Colors.white54,
+                                  color: Color(0xFF64748B),
                                 ),
                               ),
                         filled: true,
-                        fillColor: const Color(0xFF1E293B),
+                        fillColor: const Color(0xFFEFF6FF),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(14),
                           borderSide: BorderSide.none,
@@ -236,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Center(
                   child: Text(
                     'No members found',
-                    style: TextStyle(color: Colors.white70),
+                    style: TextStyle(color: Color(0xFF64748B)),
                   ),
                 ),
               )
@@ -304,9 +318,11 @@ class _MemberCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF1E293B),
+      color: Colors.white,
       borderRadius: BorderRadius.circular(20),
       clipBehavior: Clip.antiAlias,
+      elevation: 2,
+      shadowColor: const Color(0xFF2563EB).withValues(alpha: 0.12),
       child: InkWell(
         onTap: onTap,
         child: Padding(
@@ -326,7 +342,7 @@ class _MemberCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Color(0xFF1E40AF),
                   fontWeight: FontWeight.bold,
                   fontSize: 13,
                   height: 1.25,
@@ -335,14 +351,14 @@ class _MemberCard extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 member.id,
-                style: const TextStyle(color: Colors.white54, fontSize: 12),
+                style: const TextStyle(color: Color(0xFF64748B), fontSize: 12),
               ),
               const SizedBox(height: 12),
               FilledButton.tonal(
                 onPressed: onTap,
                 style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF312E81),
-                  foregroundColor: const Color(0xFFC7D2FE),
+                  backgroundColor: const Color(0xFFEFF6FF),
+                  foregroundColor: const Color(0xFF2563EB),
                   minimumSize: const Size(130, 38),
                 ),
                 child: const Text(
