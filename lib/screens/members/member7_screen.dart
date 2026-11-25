@@ -586,11 +586,11 @@ class _Member7ScreenState extends State<Member7Screen> {
                   ),
                 );
               }),
-            );
-          },
-        ),
-      );
-    }
+            ),
+          );
+        },
+      ),
+    );
   }
 
   // ─── Tab Content Switcher ────────────────────────────────────────────────
