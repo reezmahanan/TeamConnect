@@ -106,7 +106,7 @@ class _Member6ScreenState extends State<Member6Screen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: const BoxDecoration(
-                color: Color(0xFF2E2A72),
+                color: Color(0xFF2E2875),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
               ),
               child: Row(
@@ -174,7 +174,7 @@ class _Member6ScreenState extends State<Member6Screen> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color(0xFF2E2A72),
+        backgroundColor: const Color(0xFF2E2875),
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
@@ -229,16 +229,13 @@ class _Member6ScreenState extends State<Member6Screen> {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
-            Color(0xFF2E2A72), // Rich Royal Indigo
-            Color(0xFF3730A3), // Deep Indigo
-            Color(0xFF4338CA), // Royal Indigo
-            Color(0xFF4F46E5), // Vibrant Indigo
-            Color(0xFF6366F1), // Soft Indigo Accent
+            Color(0xFF2E2875), // Deep Royal Indigo (smooth blend with AppBar)
+            Color(0xFF3B339E), // Smooth Mid-Tone Indigo
+            Color(0xFF4C44CB), // Luminous Royal Indigo Base
           ],
-          stops: [0.0, 0.25, 0.50, 0.75, 1.0],
         ),
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(36),
@@ -246,7 +243,7 @@ class _Member6ScreenState extends State<Member6Screen> {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2E2A72).withValues(alpha: 0.30),
+            color: const Color(0xFF2E2875).withValues(alpha: 0.28),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -256,7 +253,7 @@ class _Member6ScreenState extends State<Member6Screen> {
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          // White Ambient Radial Glow behind Avatar
+          // Diffused Ambient Glow behind Avatar
           Positioned(
             top: -10,
             child: Container(
@@ -266,8 +263,8 @@ class _Member6ScreenState extends State<Member6Screen> {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    Colors.white.withValues(alpha: 0.35),
-                    Colors.white.withValues(alpha: 0.12),
+                    Colors.white.withValues(alpha: 0.16),
+                    Colors.white.withValues(alpha: 0.05),
                     Colors.transparent,
                   ],
                   stops: const [0.0, 0.5, 1.0],
