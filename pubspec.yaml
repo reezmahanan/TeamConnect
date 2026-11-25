@@ -80,6 +80,7 @@ flutter:
     - assets/inthumathy/images/profile/
     - assets/inthumathy/images/projects/
     - lib/assets/images/
+    - lib/assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
