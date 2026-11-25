@@ -1735,20 +1735,21 @@ class _HoverCardState extends State<_HoverCard> {
             border: widget.border ??
                 Border.all(
                   color: _isHovered
-                      ? const Color(0xFF4F46E5).withValues(alpha: 0.35)
+                      ? const Color(0xFF4F46E5).withValues(alpha: 0.55)
                       : const Color(0xFFE2E8F0),
-                  width: _isHovered ? 1.4 : 1.0,
+                  width: _isHovered ? 1.8 : 1.0,
                 ),
             boxShadow: _isHovered
                 ? [
                     BoxShadow(
-                      color: const Color(0xFF4F46E5).withValues(alpha: 0.12),
-                      blurRadius: 18,
+                      color: const Color(0xFF4F46E5).withValues(alpha: 0.18),
+                      blurRadius: 20,
+                      spreadRadius: 1.5,
                       offset: const Offset(0, 8),
                     ),
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.03),
-                      blurRadius: 6,
+                      color: Colors.black.withValues(alpha: 0.04),
+                      blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),
                   ]
