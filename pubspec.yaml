@@ -76,6 +76,9 @@ flutter:
     - assets/reezma/images/profile/
     - assets/reezma/images/projects/
     - assets/reezma/svgs/
+    - assets/jayampathi/
+    - assets/jayampathi/images/profile/
+    - assets/jayampathi/images/project/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
