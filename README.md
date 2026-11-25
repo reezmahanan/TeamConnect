@@ -60,9 +60,9 @@ profile page with a unique design.
 | Registration No. | Name | Assigned Profile File | Status |
 |---|---|---|---|
 | 23IT0480 | Ms M R Hanan | member1_screen.dart | Completed |
-| 23IT0481 | Ms W R K W Hansamali | member2_screen.dart | Pending |
+| 23IT0481 | Ms W R K W Hansamali | member2_screen.dart | Completed |
 | 23IT0482 | Ms H M C B Herath | member3_screen.dart | Pending |
-| 23IT0485 | Ms V Inthumathy | member4_screen.dart | Pending |
+| 23IT0485 | Ms V Inthumathy | member4_screen.dart | Completed |
 | 23IT0486 | Ms R V P A Jayamali | member5_screen.dart | Pending |
 | 23IT0487 | Ms G W T Jayampathi | member6_screen.dart | Pending |
 | 23IT0488 | Ms W D C G Jayarathna | member7_screen.dart | Pending |
@@ -199,18 +199,13 @@ or run FlutterFire configuration again.
 Do not modify the existing Firebase configuration without
 informing the group.
 
-## Lecturer Evaluation – Test Account
+## Evaluation – Test Account
 
 A dedicated Firebase Authentication test account is provided
-for application testing and lecturer evaluation.
-
+for application testing.
 - **Email:** teamconnect@example.com
-- **Password:** Provided separately through the private submission channel.
+- **Password:** TeamConnect@2026
 
-Please contact the group representative if test account access
-is required.
-
-Do not publish personal passwords or administrator credentials.
 
 ## Application Workflow
 
