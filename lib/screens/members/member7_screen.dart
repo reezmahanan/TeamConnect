@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Individual Profile Screen for Member 7: Ms W D C G Jayarathna (23IT0488)
-/// Developed for ITUM Mobile Communication Continuous Assessment 02 (TeamConnect).
+/// Tailored with authentic career profile: Network Engineer (Intern) & IT Diploma Student at ITUM.
 class Member7Screen extends StatefulWidget {
   const Member7Screen({super.key});
 
@@ -17,12 +17,11 @@ class _Member7ScreenState extends State<Member7Screen> {
   String _selectedSkillCategory = 'All';
   int? _expandedProjectIndex;
   bool _isLiked = false;
-  int _likeCount = 48;
+  int _likeCount = 52;
 
-  // ─── Theme Palette: Royal Indigo & Rose Coral ────────────────────────────
-  // Uniquely crafted for Member 7 (distinct from Teal, Deep Navy, and Forest Green)
+  // ─── Theme Palette: Network Tech Indigo & Rose Coral ─────────────────────
   static const Color _primaryIndigo = Color(0xFF4338CA);
-  static const Color _deepIndigo = Color(0xFF312E81);
+  static const Color _deepIndigo = Color(0xFF1E1B4B);
   static const Color _vibrantRose = Color(0xFFE11D48);
   static const Color _softRose = Color(0xFFFDA4AF);
   static const Color _roseSurface = Color(0xFFFFF1F2);
@@ -33,25 +32,36 @@ class _Member7ScreenState extends State<Member7Screen> {
   static const Color _textMuted = Color(0xFF94A3B8);
   static const Color _borderColor = Color(0xFFE2E8F0);
 
-  // ─── Personal Data ───────────────────────────────────────────────────────
+  // ─── Personal & Career Data (From Official Resume) ───────────────────────
   static const String _name = 'Ms W D C G Jayarathna';
   static const String _preferredName = 'Gimhani Jayarathna';
   static const String _regNumber = '23IT0488';
+  static const String _roleTitle = 'Network Engineer (Intern)';
   static const String _division = 'Division of Information Technology';
-  static const String _institute = 'Institute of Technology, University of Moratuwa';
+  static const String _institute = 'Institute of Technology, University of Moratuwa (ITUM)';
   static const String _email = 'wdcgjayarathna@gmail.com';
-  static const String _location = 'Diyagama, Homagama, Sri Lanka';
+  static const String _phone = '+94 74 112 9244';
+  static const String _location = 'Anuradhapura, Sri Lanka';
+  static const String _linkedinUrl = 'https://linkedin.com/in/Gimhani-Jayarathna';
   static const String _githubUrl = 'https://github.com/Gimhani-00';
   static const String _photoAssetPath = 'lib/assets/images/Gimhani.jpg';
 
+  static const String _summary =
+      'IT Diploma student at ITUM, University of Moratuwa, certified in Cisco CCNA '
+      '(Introduction to Networks; Switching, Routing, and Wireless Essentials) and currently '
+      'completing ENSA. Proficient in dual-stack (IPv4/IPv6) configuration, VLAN segmentation, '
+      'and hardware troubleshooting, seeking a Network Engineer Internship to support reliable '
+      'enterprise network operations.';
+
   final List<String> _tabs = const [
     'Overview',
+    'Experience',
     'Skills',
     'Projects',
-    'Qualifications',
+    'Education & Certs',
   ];
 
-  // ─── External URL Launcher Helper ────────────────────────────────────────
+  // ─── Helper Actions ──────────────────────────────────────────────────────
   Future<void> _launchUrlHelper(String url) async {
     final Uri uri = Uri.parse(url);
     try {
@@ -144,7 +154,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                         ),
                         SizedBox(height: 6),
                         Text(
-                          _regNumber,
+                          _roleTitle,
                           style: TextStyle(
                             color: Colors.white70,
                             fontSize: 15,
@@ -183,7 +193,7 @@ class _Member7ScreenState extends State<Member7Screen> {
           SliverToBoxAdapter(
             child: Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 860),
+                constraints: const BoxConstraints(maxWidth: 880),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -214,10 +224,10 @@ class _Member7ScreenState extends State<Member7Screen> {
     );
   }
 
-  // ─── Sliver App Bar with Gradient Header ─────────────────────────────────
+  // ─── Sliver App Bar ──────────────────────────────────────────────────────
   Widget _buildSliverAppBar() {
     return SliverAppBar(
-      expandedHeight: 280,
+      expandedHeight: 290,
       pinned: true,
       elevation: 0,
       backgroundColor: _deepIndigo,
@@ -246,19 +256,19 @@ class _Member7ScreenState extends State<Member7Screen> {
           },
         ),
         IconButton(
-          tooltip: 'Copy Email',
+          tooltip: 'Share Contact',
           icon: const Icon(Icons.share_rounded),
-          onPressed: () => _copyToClipboard(_email, 'Email address'),
+          onPressed: () => _copyToClipboard('$_name | $_email | $_phone', 'Contact Info'),
         ),
       ],
       flexibleSpace: FlexibleSpaceBar(
         background: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [_deepIndigo, _primaryIndigo, Color(0xFF6366F1), _vibrantRose],
+              colors: [_deepIndigo, _primaryIndigo, Color(0xFF4F46E5), _vibrantRose],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              stops: [0.0, 0.45, 0.75, 1.0],
+              stops: [0.0, 0.45, 0.78, 1.0],
             ),
           ),
           child: SafeArea(
@@ -278,8 +288,8 @@ class _Member7ScreenState extends State<Member7Screen> {
                           border: Border.all(color: Colors.white, width: 3),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.25),
-                              blurRadius: 16,
+                              color: Colors.black.withValues(alpha: 0.3),
+                              blurRadius: 18,
                               offset: const Offset(0, 6),
                             ),
                           ],
@@ -324,32 +334,40 @@ class _Member7ScreenState extends State<Member7Screen> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 10),
                 const Text(
-                  _name,
+                  _preferredName,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 21,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 0.2,
+                    letterSpacing: 0.3,
                   ),
                 ),
                 const SizedBox(height: 4),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.18),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.white30),
                   ),
                   child: const Text(
-                    '$_regNumber  •  NDT Information Technology',
+                    '$_roleTitle  •  ITUM',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12.5,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                     ),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                const Text(
+                  '$_name  •  $_regNumber',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 11.5,
                   ),
                 ),
               ],
@@ -360,7 +378,7 @@ class _Member7ScreenState extends State<Member7Screen> {
     );
   }
 
-  // ─── Quick Actions & Bio Highlight Card ──────────────────────────────────
+  // ─── Quick Actions & Highlights ──────────────────────────────────────────
   Widget _buildQuickActionCard() {
     return Container(
       decoration: BoxDecoration(
@@ -382,28 +400,28 @@ class _Member7ScreenState extends State<Member7Screen> {
             children: [
               Expanded(
                 child: _buildMetricItem(
-                  icon: Icons.school_rounded,
-                  label: 'Institute',
-                  value: 'ITUM',
+                  icon: Icons.router_rounded,
+                  label: 'Domain',
+                  value: 'Networking',
                   color: _primaryIndigo,
                 ),
               ),
               Container(width: 1, height: 42, color: _borderColor),
               Expanded(
                 child: _buildMetricItem(
-                  icon: Icons.code_rounded,
-                  label: 'Specialty',
-                  value: 'Flutter & UI',
+                  icon: Icons.verified_rounded,
+                  label: 'Cisco CCNA',
+                  value: 'Certified',
                   color: _vibrantRose,
                 ),
               ),
               Container(width: 1, height: 42, color: _borderColor),
               Expanded(
                 child: _buildMetricItem(
-                  icon: Icons.favorite_rounded,
-                  label: 'Appreciations',
-                  value: '$_likeCount',
-                  color: Colors.amber.shade700,
+                  icon: Icons.business_center_rounded,
+                  label: 'Experience',
+                  value: 'Metropolitan',
+                  color: const Color(0xFF0D9488),
                 ),
               ),
             ],
@@ -418,21 +436,27 @@ class _Member7ScreenState extends State<Member7Screen> {
             children: [
               _buildActionButton(
                 icon: Icons.email_outlined,
-                label: 'Email Me',
+                label: 'Email',
                 primary: true,
                 onPressed: () => _launchUrlHelper('mailto:$_email'),
               ),
               _buildActionButton(
-                icon: Icons.code_rounded,
-                label: 'GitHub Profile',
+                icon: Icons.phone_outlined,
+                label: 'Call',
                 primary: false,
-                onPressed: () => _launchUrlHelper(_githubUrl),
+                onPressed: () => _launchUrlHelper('tel:$_phone'),
               ),
               _buildActionButton(
-                icon: Icons.content_copy_rounded,
-                label: 'Copy Reg No',
+                icon: Icons.link_rounded,
+                label: 'LinkedIn',
                 primary: false,
-                onPressed: () => _copyToClipboard(_regNumber, 'Registration Number'),
+                onPressed: () => _launchUrlHelper(_linkedinUrl),
+              ),
+              _buildActionButton(
+                icon: Icons.code_rounded,
+                label: 'GitHub',
+                primary: false,
+                onPressed: () => _launchUrlHelper(_githubUrl),
               ),
             ],
           ),
@@ -453,8 +477,9 @@ class _Member7ScreenState extends State<Member7Screen> {
         const SizedBox(height: 4),
         Text(
           value,
+          textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
             color: _textPrimary,
           ),
@@ -485,9 +510,9 @@ class _Member7ScreenState extends State<Member7Screen> {
           backgroundColor: _primaryIndigo,
           foregroundColor: Colors.white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+          textStyle: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600),
         ),
       );
     }
@@ -498,9 +523,9 @@ class _Member7ScreenState extends State<Member7Screen> {
       style: OutlinedButton.styleFrom(
         foregroundColor: _primaryIndigo,
         side: const BorderSide(color: Color(0xFFC7D2FE)),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        textStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+        textStyle: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -515,55 +540,57 @@ class _Member7ScreenState extends State<Member7Screen> {
       ),
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final isNarrow = constraints.maxWidth < 450;
-          return Row(
-            children: List.generate(_tabs.length, (index) {
-              final isSelected = _selectedTabIndex == index;
-              return Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _selectedTabIndex = index;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 220),
-                    curve: Curves.easeInOut,
-                    padding: EdgeInsets.symmetric(
-                      vertical: isNarrow ? 9 : 11,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isSelected ? _cardBg : Colors.transparent,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: isSelected
-                          ? [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.08),
-                                blurRadius: 6,
-                                offset: const Offset(0, 2),
-                              ),
-                            ]
-                          : null,
-                    ),
-                    child: Text(
-                      _tabs[index],
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: isNarrow ? 11.5 : 13,
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
-                        color: isSelected ? _primaryIndigo : _textSecondary,
+          final isNarrow = constraints.maxWidth < 600;
+          return SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(_tabs.length, (index) {
+                final isSelected = _selectedTabIndex == index;
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    onTap: () {
+                      setState(() {
+                        _selectedTabIndex = index;
+                      });
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: isNarrow ? 14 : 18,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isSelected ? _cardBg : Colors.transparent,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: isSelected
+                            ? [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.08),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ]
+                            : null,
+                      ),
+                      child: Text(
+                        _tabs[index],
+                        style: TextStyle(
+                          fontSize: 12.5,
+                          fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
+                          color: isSelected ? _primaryIndigo : _textSecondary,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            }),
-          );
-        },
-      ),
-    );
+                );
+              }),
+            );
+          },
+        ),
+      );
+    }
   }
 
   // ─── Tab Content Switcher ────────────────────────────────────────────────
@@ -572,11 +599,13 @@ class _Member7ScreenState extends State<Member7Screen> {
       case 0:
         return _buildOverviewTab();
       case 1:
-        return _buildSkillsTab();
+        return _buildExperienceTab();
       case 2:
-        return _buildProjectsTab();
+        return _buildSkillsTab();
       case 3:
-        return _buildQualificationsTab();
+        return _buildProjectsTab();
+      case 4:
+        return _buildEducationAndCertsTab();
       default:
         return const SizedBox.shrink();
     }
@@ -590,20 +619,18 @@ class _Member7ScreenState extends State<Member7Screen> {
       key: const ValueKey('tab_overview'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // About Section
+        // Professional Summary Card
         _buildSectionCard(
-          title: 'About Me',
+          title: 'Professional Summary',
           icon: Icons.person_outline_rounded,
           accentColor: _primaryIndigo,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'I am an enthusiastic Information Technology undergraduate at the Institute of Technology, '
-                'University of Moratuwa (ITUM). Passionate about mobile application engineering, UI/UX '
-                'design, and crafting intuitive, responsive user experiences with Flutter and modern software practices.',
+                _summary,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 13.5,
                   height: 1.6,
                   color: _textSecondary,
                 ),
@@ -613,10 +640,11 @@ class _Member7ScreenState extends State<Member7Screen> {
                 spacing: 8,
                 runSpacing: 8,
                 children: [
-                  _buildTagBadge('NDT IT Student', _primaryIndigo),
-                  _buildTagBadge('Flutter Developer', _vibrantRose),
-                  _buildTagBadge('UI/UX Enthusiast', const Color(0xFF0D9488)),
-                  _buildTagBadge('Collaborative Team Member', const Color(0xFFEA580C)),
+                  _buildTagBadge('Cisco CCNA Certified', _primaryIndigo),
+                  _buildTagBadge('IPv4 / IPv6 Dual-Stack', _vibrantRose),
+                  _buildTagBadge('VLAN Segmentation', const Color(0xFF0D9488)),
+                  _buildTagBadge('Hardware Troubleshooting', const Color(0xFFEA580C)),
+                  _buildTagBadge('TeamConnect Member 7', const Color(0xFF6366F1)),
                 ],
               ),
             ],
@@ -624,9 +652,9 @@ class _Member7ScreenState extends State<Member7Screen> {
         ),
         const SizedBox(height: 16),
 
-        // Personal Contact & Academic Details Card
+        // Contact Information
         _buildSectionCard(
-          title: 'Personal & Academic Details',
+          title: 'Contact & Student Identification',
           icon: Icons.contact_page_outlined,
           accentColor: _vibrantRose,
           child: Column(
@@ -636,25 +664,19 @@ class _Member7ScreenState extends State<Member7Screen> {
                 title: 'Full Name',
                 value: _name,
               ),
-              const Divider(color: _borderColor, height: 20),
+              const Divider(color: _borderColor, height: 18),
               _buildInfoRow(
                 icon: Icons.tag_rounded,
-                title: 'Registration Number',
+                title: 'Registration No.',
                 value: _regNumber,
               ),
-              const Divider(color: _borderColor, height: 20),
+              const Divider(color: _borderColor, height: 18),
               _buildInfoRow(
                 icon: Icons.apartment_rounded,
-                title: 'Division',
-                value: _division,
-              ),
-              const Divider(color: _borderColor, height: 20),
-              _buildInfoRow(
-                icon: Icons.account_balance_rounded,
                 title: 'Institute',
                 value: _institute,
               ),
-              const Divider(color: _borderColor, height: 20),
+              const Divider(color: _borderColor, height: 18),
               _buildInfoRow(
                 icon: Icons.email_outlined,
                 title: 'Email Address',
@@ -662,54 +684,35 @@ class _Member7ScreenState extends State<Member7Screen> {
                 isAction: true,
                 onTap: () => _launchUrlHelper('mailto:$_email'),
               ),
-              const Divider(color: _borderColor, height: 20),
+              const Divider(color: _borderColor, height: 18),
+              _buildInfoRow(
+                icon: Icons.phone_outlined,
+                title: 'Phone Number',
+                value: _phone,
+                isAction: true,
+                onTap: () => _launchUrlHelper('tel:$_phone'),
+              ),
+              const Divider(color: _borderColor, height: 18),
               _buildInfoRow(
                 icon: Icons.location_on_outlined,
-                title: 'Address / Location',
+                title: 'Location',
                 value: _location,
               ),
-              const Divider(color: _borderColor, height: 20),
+              const Divider(color: _borderColor, height: 18),
               _buildInfoRow(
                 icon: Icons.link_rounded,
-                title: 'GitHub Profile',
-                value: _githubUrl,
+                title: 'LinkedIn',
+                value: 'linkedin.com/in/Gimhani-Jayarathna',
+                isAction: true,
+                onTap: () => _launchUrlHelper(_linkedinUrl),
+              ),
+              const Divider(color: _borderColor, height: 18),
+              _buildInfoRow(
+                icon: Icons.code_rounded,
+                title: 'GitHub',
+                value: 'github.com/Gimhani-00',
                 isAction: true,
                 onTap: () => _launchUrlHelper(_githubUrl),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 16),
-
-        // Special Talents Section
-        _buildSectionCard(
-          title: 'Special Talents & Strengths',
-          icon: Icons.auto_awesome_rounded,
-          accentColor: Colors.amber.shade700,
-          child: Column(
-            children: [
-              _buildTalentItem(
-                icon: Icons.design_services_rounded,
-                title: 'UI/UX & Interactive Design',
-                description:
-                    'Skilled in designing intuitive wireframes, responsive UI prototypes in Figma, and translating design concepts into pixel-perfect Flutter widgets.',
-                color: _vibrantRose,
-              ),
-              const SizedBox(height: 12),
-              _buildTalentItem(
-                icon: Icons.palette_outlined,
-                title: 'Creative Presentation & Visual Structuring',
-                description:
-                    'Strong flair for typography, harmonious color schemes, and aesthetic information hierarchy in mobile applications and documentation.',
-                color: _primaryIndigo,
-              ),
-              const SizedBox(height: 12),
-              _buildTalentItem(
-                icon: Icons.groups_rounded,
-                title: 'Collaborative Problem Resolution',
-                description:
-                    'Exceptional team communication, constructive code review capabilities, and active contributions towards shared group milestones.',
-                color: const Color(0xFF0D9488),
               ),
             ],
           ),
@@ -719,26 +722,149 @@ class _Member7ScreenState extends State<Member7Screen> {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TAB 2: SKILLS
+  // TAB 2: EXPERIENCE
+  // ═══════════════════════════════════════════════════════════════════════════
+  Widget _buildExperienceTab() {
+    return Column(
+      key: const ValueKey('tab_experience'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _buildSectionCard(
+          title: 'Work Experience',
+          icon: Icons.business_center_rounded,
+          accentColor: const Color(0xFF0D9488),
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: _surfaceBg,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: _borderColor),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF0D9488).withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Icon(
+                        Icons.apartment_rounded,
+                        color: Color(0xFF0D9488),
+                        size: 24,
+                      ),
+                    ),
+                    const SizedBox(width: 14),
+                    const Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Metropolitan Technologies (Pvt) Ltd',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: _textPrimary,
+                            ),
+                          ),
+                          SizedBox(height: 3),
+                          Text(
+                            'IT Intern  •  2024',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF0D9488),
+                            ),
+                          ),
+                          SizedBox(height: 2),
+                          Text(
+                            'Colombo, Sri Lanka',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: _textMuted,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 14),
+                const Divider(color: _borderColor),
+                const SizedBox(height: 10),
+                const Text(
+                  'Key Responsibilities & Contributions:',
+                  style: TextStyle(
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.bold,
+                    color: _textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                _buildBulletPoint(
+                  'Handled comprehensive hardware and software installations, operating system provisioning, and routine health checks for enterprise laptops and desktop computers.',
+                ),
+                const SizedBox(height: 6),
+                _buildBulletPoint(
+                  'Diagnosed and resolved critical hardware failures, component replacements, driver conflicts, and peripheral connectivity issues.',
+                ),
+                const SizedBox(height: 6),
+                _buildBulletPoint(
+                  'Prepared formal IT requirement technical specifications, documentation, and bills of materials for competitive tenders and procurement quotations.',
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // TAB 3: SKILLS
   // ═══════════════════════════════════════════════════════════════════════════
   Widget _buildSkillsTab() {
-    final categories = ['All', 'Technical', 'Soft Skills', 'Tools'];
+    final categories = [
+      'All',
+      'Core Networking',
+      'Protocols & Services',
+      'Tools & Platforms',
+      'Soft Skills',
+    ];
 
     final allSkills = [
-      _SkillData('Flutter & Dart', 'Technical', 0.88, Icons.phone_android_rounded, _primaryIndigo),
-      _SkillData('Java (OOP & Core)', 'Technical', 0.80, Icons.coffee_rounded, const Color(0xFFD97706)),
-      _SkillData('Python Programming', 'Technical', 0.78, Icons.terminal_rounded, const Color(0xFF0284C7)),
-      _SkillData('HTML5 / CSS3 & Web', 'Technical', 0.85, Icons.html_rounded, const Color(0xFFEA580C)),
-      _SkillData('SQL & Relational DBs', 'Technical', 0.75, Icons.storage_rounded, const Color(0xFF475569)),
-      _SkillData('Firebase Authentication', 'Technical', 0.82, Icons.local_fire_department_rounded, _vibrantRose),
-      _SkillData('Effective Communication', 'Soft Skills', 0.92, Icons.record_voice_over_rounded, const Color(0xFF0D9488)),
-      _SkillData('Team Leadership & Synergy', 'Soft Skills', 0.90, Icons.groups_rounded, _primaryIndigo),
-      _SkillData('Problem Solving', 'Soft Skills', 0.86, Icons.psychology_rounded, _vibrantRose),
-      _SkillData('Time Management', 'Soft Skills', 0.88, Icons.timer_outlined, Colors.amber.shade800),
-      _SkillData('Adaptability', 'Soft Skills', 0.90, Icons.sync_alt_rounded, const Color(0xFF6366F1)),
-      _SkillData('Git & GitHub Version Control', 'Tools', 0.85, Icons.alt_route_rounded, const Color(0xFF1E293B)),
-      _SkillData('Figma UI/UX Prototyping', 'Tools', 0.88, Icons.polyline_rounded, const Color(0xFF9333EA)),
-      _SkillData('VS Code & Android Studio', 'Tools', 0.90, Icons.laptop_chromebook_rounded, const Color(0xFF2563EB)),
+      // Core Networking
+      _SkillData('Routing & Switching', 'Core Networking', 0.92, Icons.alt_route_rounded, _primaryIndigo),
+      _SkillData('IPv4 & IPv6 Dual-Stack Addressing', 'Core Networking', 0.90, Icons.lan_rounded, _primaryIndigo),
+      _SkillData('Subnetting (CIDR/VLSM/FLSM)', 'Core Networking', 0.95, Icons.calculate_rounded, _primaryIndigo),
+      _SkillData('VLAN Segmentation & Trunking', 'Core Networking', 0.90, Icons.hub_rounded, _primaryIndigo),
+      _SkillData('Inter-VLAN Routing (802.1Q)', 'Core Networking', 0.88, Icons.settings_ethernet_rounded, _primaryIndigo),
+
+      // Protocols & Services
+      _SkillData('TCP/IP Protocol Suite & OSI Model', 'Protocols & Services', 0.94, Icons.layers_rounded, _vibrantRose),
+      _SkillData('DHCP & DNS Configuration', 'Protocols & Services', 0.90, Icons.dns_rounded, _vibrantRose),
+      _SkillData('NAT (Network Address Translation)', 'Protocols & Services', 0.88, Icons.swap_horiz_rounded, _vibrantRose),
+      _SkillData('ICMPv4 / ICMPv6 Diagnostics', 'Protocols & Services', 0.92, Icons.network_ping_rounded, _vibrantRose),
+      _SkillData('SSHv2 Remote Access & Hardening', 'Protocols & Services', 0.88, Icons.security_rounded, _vibrantRose),
+      _SkillData('HTTP / HTTPS Application Layer', 'Protocols & Services', 0.85, Icons.lock_outline_rounded, _vibrantRose),
+
+      // Tools & Platforms
+      _SkillData('Cisco Packet Tracer', 'Tools & Platforms', 0.95, Icons.hub_outlined, const Color(0xFF0284C7)),
+      _SkillData('Cisco IOS CLI Configuration', 'Tools & Platforms', 0.90, Icons.terminal_rounded, const Color(0xFF0284C7)),
+      _SkillData('VS Code & Dev Tools', 'Tools & Platforms', 0.88, Icons.laptop_chromebook_rounded, const Color(0xFF0284C7)),
+      _SkillData('Git & GitHub Version Control', 'Tools & Platforms', 0.85, Icons.code_rounded, const Color(0xFF0284C7)),
+      _SkillData('Postman API Testing', 'Tools & Platforms', 0.80, Icons.send_rounded, const Color(0xFF0284C7)),
+      _SkillData('Flutter & Mobile UI', 'Tools & Platforms', 0.82, Icons.phone_android_rounded, const Color(0xFF0284C7)),
+
+      // Soft Skills
+      _SkillData('Fault Isolation & Diagnostics', 'Soft Skills', 0.95, Icons.troubleshoot_rounded, const Color(0xFF0D9488)),
+      _SkillData('Technical Documentation', 'Soft Skills', 0.90, Icons.description_rounded, const Color(0xFF0D9488)),
+      _SkillData('Incident Troubleshooting', 'Soft Skills', 0.92, Icons.warning_amber_rounded, const Color(0xFF0D9488)),
+      _SkillData('Team Collaboration', 'Soft Skills', 0.92, Icons.groups_rounded, const Color(0xFF0D9488)),
     ];
 
     final filteredSkills = _selectedSkillCategory == 'All'
@@ -749,7 +875,7 @@ class _Member7ScreenState extends State<Member7Screen> {
       key: const ValueKey('tab_skills'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // Category Filter Chips (Interactive State Demonstration)
+        // Category Filter
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
@@ -765,7 +891,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                   Icon(Icons.filter_list_rounded, size: 18, color: _primaryIndigo),
                   SizedBox(width: 8),
                   Text(
-                    'Filter Category',
+                    'Filter Technical Domain',
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
@@ -775,43 +901,46 @@ class _Member7ScreenState extends State<Member7Screen> {
                 ],
               ),
               const SizedBox(height: 10),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: categories.map((cat) {
-                  final isSelected = _selectedSkillCategory == cat;
-                  return ChoiceChip(
-                    label: Text(cat),
-                    selected: isSelected,
-                    onSelected: (selected) {
-                      if (selected) {
-                        setState(() {
-                          _selectedSkillCategory = cat;
-                        });
-                      }
-                    },
-                    selectedColor: _primaryIndigo,
-                    backgroundColor: _surfaceBg,
-                    labelStyle: TextStyle(
-                      fontSize: 12.5,
-                      fontWeight: FontWeight.w600,
-                      color: isSelected ? Colors.white : _textSecondary,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                        color: isSelected ? _primaryIndigo : _borderColor,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: categories.map((cat) {
+                    final isSelected = _selectedSkillCategory == cat;
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: ChoiceChip(
+                        label: Text(cat),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          if (selected) {
+                            setState(() {
+                              _selectedSkillCategory = cat;
+                            });
+                          }
+                        },
+                        selectedColor: _primaryIndigo,
+                        backgroundColor: _surfaceBg,
+                        labelStyle: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: isSelected ? Colors.white : _textSecondary,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          side: BorderSide(
+                            color: isSelected ? _primaryIndigo : _borderColor,
+                          ),
+                        ),
                       ),
-                    ),
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+                ),
               ),
             ],
           ),
         ),
         const SizedBox(height: 16),
 
-        // Skill list
         _buildSectionCard(
           title: '$_selectedSkillCategory Skills (${filteredSkills.length})',
           icon: Icons.assessment_outlined,
@@ -879,50 +1008,35 @@ class _Member7ScreenState extends State<Member7Screen> {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TAB 3: PROJECTS
+  // TAB 4: PROJECTS
   // ═══════════════════════════════════════════════════════════════════════════
   Widget _buildProjectsTab() {
     final projects = [
       _ProjectData(
-        title: 'TeamConnect – Group Profile Application',
-        role: 'Member 7 Profile & UI Component Developer',
+        title: 'Enterprise Dual-Stack Campus Network Architecture with DMZ Segmentation',
+        role: 'Network Infrastructure Architect',
+        duration: 'Major Technical Project',
+        description:
+            'A comprehensive multi-subnet enterprise network architecture built with IPv4 & IPv6 dual-stack addressing, secure departmental isolation, and perimeter DMZ defense.',
+        technologies: ['Cisco Packet Tracer', 'Cisco IOS CLI', '802.1Q VLANs', 'ACLs', 'SSHv2', 'IPv4/IPv6'],
+        highlights: [
+          'Dual-Stack Design & Routing: Architected and simulated a multi-subnet IPv4/IPv6 campus topology implementing 802.1Q inter-VLAN trunking and Router-on-a-Stick routing for secure departmental segmentation.',
+          'Perimeter Security & DMZ: Built an isolated DMZ perimeter housing enterprise servers; deployed Standard and Extended ACLs to restrict unauthorized internal and external traffic.',
+          'Device Hardening & Verification: Hardened network infrastructure using SSHv2 remote access and encrypted privilege passwords; verified end-to-end packet delivery and path redundancy using ICMP diagnostic tools.',
+        ],
+        githubRepo: _githubUrl,
+      ),
+      _ProjectData(
+        title: 'TeamConnect – Mobile Group Profile Application',
+        role: 'Member 7 Profile & UI Module Developer',
         duration: 'November 2026',
         description:
-            'A responsive cross-platform Flutter application for nine NDT IT students at ITUM featuring Firebase Authentication, member directory navigation, and personalized member profile experiences.',
+            'Collaborative cross-platform mobile profile app developed with Flutter and Firebase Authentication for nine NDT IT students at ITUM (CA02).',
         technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Material 3', 'StatefulWidget'],
         highlights: [
-          'Engineered individual Member 7 profile screen with custom interactive state architecture.',
-          'Built responsive SliverAppBar header with real-time like metrics and zoomable profile viewer.',
-          'Implemented category-based dynamic skill filtering using StatefulWidget and setState().',
-          'Enforced clean code quality adhering strictly to dart format and flutter analyze guidelines.',
-        ],
-        githubRepo: _githubUrl,
-      ),
-      _ProjectData(
-        title: 'TaskPulse – Smart Task & Workflow Manager',
-        role: 'Lead Mobile Developer',
-        duration: 'August 2026',
-        description:
-            'A high-performance personal task planner enabling students to manage academic assignments, organize deadlines by priority, and track daily progress.',
-        technologies: ['Flutter', 'Dart', 'SQLite', 'Local Notifications', 'Figma'],
-        highlights: [
-          'Implemented local offline-first persistence with SQLite and state management.',
-          'Created scheduled deadline notification triggers for upcoming coursework milestones.',
-          'Designed complete user experience journey and interactive components in Figma.',
-        ],
-        githubRepo: _githubUrl,
-      ),
-      _ProjectData(
-        title: 'CampusConnect – Student Resource Portal',
-        role: 'Frontend & UI Developer',
-        duration: 'May 2026',
-        description:
-            'A centralized student portal interface for academic announcements, lecture timetable views, and downloadable study resources.',
-        technologies: ['Flutter Web', 'REST APIs', 'Cloud Firestore', 'Git'],
-        highlights: [
-          'Developed responsive multi-column layouts adapting seamlessly from mobile to desktop browsers.',
-          'Integrated Firestore real-time notice feeds with search and category tags.',
-          'Coordinated version control branching and pull requests on GitHub.',
+          'Designed and implemented individual Member 7 profile screen with custom interactive tabs and theme system.',
+          'Created responsive SliverAppBar with interactive favorites counter, contact triggers, and zoomable profile viewer.',
+          'Structured clean code adhering strictly to dart format and flutter analyze guidelines.',
         ],
         githubRepo: _githubUrl,
       ),
@@ -935,7 +1049,7 @@ class _Member7ScreenState extends State<Member7Screen> {
         Padding(
           padding: const EdgeInsets.only(bottom: 12.0),
           child: Text(
-            'Tap any project to view architecture highlights & key contributions.',
+            'Tap project to expand key architecture and implementation details.',
             style: TextStyle(
               fontSize: 12.5,
               color: Colors.grey.shade600,
@@ -993,7 +1107,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Icon(
-                              Icons.folder_special_rounded,
+                              index == 0 ? Icons.hub_rounded : Icons.phone_android_rounded,
                               color: isExpanded ? Colors.white : _primaryIndigo,
                               size: 22,
                             ),
@@ -1006,7 +1120,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                                 Text(
                                   project.title,
                                   style: const TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 14.5,
                                     fontWeight: FontWeight.bold,
                                     color: _textPrimary,
                                   ),
@@ -1068,7 +1182,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                         const Divider(color: _borderColor),
                         const SizedBox(height: 10),
                         const Text(
-                          'Key Contributions & Architecture:',
+                          'Implementation Highlights:',
                           style: TextStyle(
                             fontSize: 12.5,
                             fontWeight: FontWeight.bold,
@@ -1106,7 +1220,7 @@ class _Member7ScreenState extends State<Member7Screen> {
                           child: TextButton.icon(
                             onPressed: () => _launchUrlHelper(project.githubRepo),
                             icon: const Icon(Icons.open_in_new_rounded, size: 15),
-                            label: const Text('View on GitHub'),
+                            label: const Text('View GitHub / Repos'),
                             style: TextButton.styleFrom(
                               foregroundColor: _primaryIndigo,
                               textStyle: const TextStyle(
@@ -1129,40 +1243,32 @@ class _Member7ScreenState extends State<Member7Screen> {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TAB 4: QUALIFICATIONS & ABOUT
+  // TAB 5: EDUCATION, CERTIFICATIONS & REFERENCES
   // ═══════════════════════════════════════════════════════════════════════════
-  Widget _buildQualificationsTab() {
+  Widget _buildEducationAndCertsTab() {
     return Column(
-      key: const ValueKey('tab_qualifications'),
+      key: const ValueKey('tab_education'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // Academic Education Timeline Card
+        // Education
         _buildSectionCard(
-          title: 'Academic Qualifications',
+          title: 'Education',
           icon: Icons.school_rounded,
           accentColor: _primaryIndigo,
           child: Column(
             children: [
               _buildEducationItem(
                 institution: 'Institute of Technology, University of Moratuwa (ITUM)',
-                qualification: 'National Diploma in Technology (NDT) in Information Technology',
-                period: '2023 – Present',
+                qualification: 'Diploma in Information Technology',
+                period: '2025 – Present',
                 status: 'Undergraduate',
                 isCurrent: true,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 14),
               _buildEducationItem(
-                institution: 'Ministry of Education, Sri Lanka',
-                qualification: 'G.C.E. Advanced Level (A/L) Examination',
-                period: 'Physical Science / Technology Stream',
-                status: 'Completed',
-                isCurrent: false,
-              ),
-              const SizedBox(height: 16),
-              _buildEducationItem(
-                institution: 'Ministry of Education, Sri Lanka',
-                qualification: 'G.C.E. Ordinary Level (O/L) Examination',
-                period: 'Passed with Distinction Results',
+                institution: 'Industrial Development Board (IDB)',
+                qualification: 'Certificate in Computer Hardware and Networking',
+                period: '2024',
                 status: 'Completed',
                 isCurrent: false,
               ),
@@ -1171,28 +1277,35 @@ class _Member7ScreenState extends State<Member7Screen> {
         ),
         const SizedBox(height: 16),
 
-        // Professional Certifications
+        // Cisco & Industry Certifications
         _buildSectionCard(
-          title: 'Certifications & Training',
+          title: 'Industry Certifications',
           icon: Icons.workspace_premium_rounded,
           accentColor: _vibrantRose,
           child: Column(
             children: [
               _buildCertItem(
-                title: 'Python Programming Essentials',
-                issuer: 'Online Learning Initiative',
-                year: '2025',
+                title: 'CCNA: Enterprise Networking, Security, & Automation (ENSA)',
+                issuer: 'Cisco Networking Academy (UoM)',
+                year: 'In Progress',
+                inProgress: true,
               ),
               const SizedBox(height: 10),
               _buildCertItem(
-                title: 'UI/UX Design Fundamentals with Figma',
-                issuer: 'Digital Skills Showcase',
-                year: '2025',
+                title: 'CCNA: Switching, Routing, & Wireless Essentials (SRWE)',
+                issuer: 'Cisco Networking Academy (UoM)',
+                year: '2026',
               ),
               const SizedBox(height: 10),
               _buildCertItem(
-                title: 'Version Control with Git and GitHub',
-                issuer: 'ITUM Practical Workshop',
+                title: 'CCNA: Introduction to Networks (ITN)',
+                issuer: 'Cisco Networking Academy (UoM)',
+                year: '2026',
+              ),
+              const SizedBox(height: 10),
+              _buildCertItem(
+                title: 'Computer Hardware & Network Administration',
+                issuer: 'Industrial Development Board (IDB)',
                 year: '2024',
               ),
             ],
@@ -1200,20 +1313,28 @@ class _Member7ScreenState extends State<Member7Screen> {
         ),
         const SizedBox(height: 16),
 
-        // Hobbies and Interests Card
+        // Academic References
         _buildSectionCard(
-          title: 'Hobbies & Personal Interests',
-          icon: Icons.interests_rounded,
+          title: 'References',
+          icon: Icons.contact_emergency_rounded,
           accentColor: const Color(0xFF0D9488),
-          child: Wrap(
-            spacing: 8,
-            runSpacing: 8,
+          child: Column(
             children: [
-              _buildInterestChip(Icons.smartphone_rounded, 'Mobile App Building'),
-              _buildInterestChip(Icons.brush_rounded, 'UI/UX Prototyping'),
-              _buildInterestChip(Icons.menu_book_rounded, 'Reading Tech Articles'),
-              _buildInterestChip(Icons.sports_tennis_rounded, 'Badminton'),
-              _buildInterestChip(Icons.travel_explore_rounded, 'Exploring Open-Source'),
+              _buildReferenceCard(
+                name: 'Mrs. Tharukshi Adasuriya',
+                title: 'Lecturer - Probationary',
+                organization: 'Institute of Technology, University of Moratuwa',
+                phone: '+94 77 1902981',
+                email: 'tharukshin@itum.mrt.ac.lk',
+              ),
+              const SizedBox(height: 12),
+              _buildReferenceCard(
+                name: 'Mr. Madhura Anuranga',
+                title: 'Deputy General Manager – Enterprise Solutions Sales',
+                organization: 'Gestetner of Ceylon (Pvt) Ltd',
+                phone: '+94 71 984 8436',
+                email: 'madhuraanuranga@gmail.com',
+              ),
             ],
           ),
         ),
@@ -1221,7 +1342,7 @@ class _Member7ScreenState extends State<Member7Screen> {
     );
   }
 
-  // ─── Shared UI Component Builders ─────────────────────────────────────────
+  // ─── Shared UI Helpers ───────────────────────────────────────────────────
   Widget _buildSectionCard({
     required String title,
     required IconData icon,
@@ -1295,6 +1416,26 @@ class _Member7ScreenState extends State<Member7Screen> {
     );
   }
 
+  Widget _buildBulletPoint(String text) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Icon(Icons.arrow_right_rounded, size: 20, color: Color(0xFF0D9488)),
+        const SizedBox(width: 6),
+        Expanded(
+          child: Text(
+            text,
+            style: const TextStyle(
+              fontSize: 12.5,
+              height: 1.45,
+              color: _textSecondary,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildInfoRow({
     required IconData icon,
     required String title,
@@ -1313,7 +1454,7 @@ class _Member7ScreenState extends State<Member7Screen> {
             Icon(icon, size: 18, color: _primaryIndigo),
             const SizedBox(width: 12),
             SizedBox(
-              width: 140,
+              width: 120,
               child: Text(
                 title,
                 style: const TextStyle(
@@ -1340,57 +1481,6 @@ class _Member7ScreenState extends State<Member7Screen> {
             ],
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildTalentItem({
-    required IconData icon,
-    required String title,
-    required String description,
-    required Color color,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: _surfaceBg,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: _borderColor),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            radius: 16,
-            backgroundColor: color.withValues(alpha: 0.15),
-            child: Icon(icon, size: 18, color: color),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 13.5,
-                    fontWeight: FontWeight.bold,
-                    color: _textPrimary,
-                  ),
-                ),
-                const SizedBox(height: 3),
-                Text(
-                  description,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    height: 1.4,
-                    color: _textSecondary,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -1482,6 +1572,7 @@ class _Member7ScreenState extends State<Member7Screen> {
     required String title,
     required String issuer,
     required String year,
+    bool inProgress = false,
   }) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -1492,7 +1583,11 @@ class _Member7ScreenState extends State<Member7Screen> {
       ),
       child: Row(
         children: [
-          const Icon(Icons.verified_rounded, size: 20, color: _vibrantRose),
+          Icon(
+            inProgress ? Icons.hourglass_top_rounded : Icons.verified_rounded,
+            size: 20,
+            color: inProgress ? const Color(0xFFD97706) : _vibrantRose,
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -1513,12 +1608,21 @@ class _Member7ScreenState extends State<Member7Screen> {
               ],
             ),
           ),
-          Text(
-            year,
-            style: const TextStyle(
-              fontSize: 11.5,
-              fontWeight: FontWeight.w600,
-              color: _textMuted,
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+            decoration: BoxDecoration(
+              color: inProgress
+                  ? const Color(0xFFFEF3C7)
+                  : _vibrantRose.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              year,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
+                color: inProgress ? const Color(0xFFB45309) : _vibrantRose,
+              ),
             ),
           ),
         ],
@@ -1526,19 +1630,101 @@ class _Member7ScreenState extends State<Member7Screen> {
     );
   }
 
-  Widget _buildInterestChip(IconData icon, String label) {
-    return Chip(
-      avatar: Icon(icon, size: 16, color: _primaryIndigo),
-      label: Text(label),
-      backgroundColor: _surfaceBg,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        side: const BorderSide(color: _borderColor),
+  Widget _buildReferenceCard({
+    required String name,
+    required String title,
+    required String organization,
+    required String phone,
+    required String email,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: _surfaceBg,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: _borderColor),
       ),
-      labelStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w500,
-        color: _textPrimary,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+                backgroundColor: const Color(0xFF0D9488).withValues(alpha: 0.15),
+                child: const Icon(Icons.person_rounded, size: 18, color: Color(0xFF0D9488)),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: const TextStyle(
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.bold,
+                        color: _textPrimary,
+                      ),
+                    ),
+                    Text(
+                      '$title • $organization',
+                      style: const TextStyle(
+                        fontSize: 11.5,
+                        color: _textSecondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              InkWell(
+                onTap: () => _launchUrlHelper('tel:$phone'),
+                child: Row(
+                  children: [
+                    const Icon(Icons.phone_outlined, size: 14, color: _primaryIndigo),
+                    const SizedBox(width: 4),
+                    Text(
+                      phone,
+                      style: const TextStyle(
+                        fontSize: 11.5,
+                        color: _primaryIndigo,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: InkWell(
+                  onTap: () => _launchUrlHelper('mailto:$email'),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.email_outlined, size: 14, color: _primaryIndigo),
+                      const SizedBox(width: 4),
+                      Expanded(
+                        child: Text(
+                          email,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 11.5,
+                            color: _primaryIndigo,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -1556,7 +1742,7 @@ class _Member7ScreenState extends State<Member7Screen> {
         ),
         const SizedBox(height: 4),
         Text(
-          'National Diploma in Technology (NDT) | ITUM 2026',
+          'Division of Information Technology | ITUM 2026',
           style: TextStyle(
             fontSize: 11,
             color: Colors.grey.shade500,
