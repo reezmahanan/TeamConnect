@@ -279,7 +279,6 @@ class _Member1ScreenState extends State<Member1Screen> {
                 ? _expandedMore.remove(t)
                 : _expandedMore.add(t);
           }),
-          onCopyEmail: _copyEmail,
           onLink: _openLink,
         );
       default:
@@ -483,16 +482,6 @@ class _ProfileInfo extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        const SizedBox(height: 4),
-        Text(
-          'Full-Stack Developer  ·  AI/ML Enthusiast',
-          textAlign: isWide ? TextAlign.start : TextAlign.center,
-          style: const TextStyle(
-            color: _P.textSec,
-            fontSize: 13,
-            letterSpacing: 0.2,
-          ),
         ),
         const SizedBox(height: 14),
         Wrap(
@@ -2130,13 +2119,11 @@ class _MoreSection extends StatelessWidget {
   const _MoreSection({
     required this.expandedSections,
     required this.onToggle,
-    required this.onCopyEmail,
     required this.onLink,
   });
 
   final Set<String> expandedSections;
   final ValueChanged<String> onToggle;
-  final VoidCallback onCopyEmail;
   final Future<void> Function(String) onLink;
 
   @override
@@ -2172,118 +2159,17 @@ class _MoreSection extends StatelessWidget {
               _CertificateAsset('Node.js(Basic).png', 'HackerRank — Node.js'),
               _CertificateAsset('java basic.png', 'HackerRank — Java'),
               _CertificateAsset('sql basic.png', 'HackerRank — SQL'),
-              _CertificateAsset('css basic.png', 'HackerRank — CSS'),
               _CertificateAsset(
-                'Introduction to git.png',
-                'Introduction to Git',
-              ),
-              _CertificateAsset(
-                'introduction to github co pilot.png',
-                'GitHub Copilot',
+                'Machile Learning using python.png',
+                'Machine Learning Using Python',
               ),
               _CertificateAsset(
                 'describe cloud computing.png',
                 'Microsoft — Cloud Computing',
               ),
               _CertificateAsset(
-                'introduction to ai concepts.png',
-                'Microsoft — AI Concepts',
-              ),
-              _CertificateAsset(
-                'front end web develoment.png',
-                'Front-End Web Development',
-              ),
-              _CertificateAsset(
-                'Python for beginners.png',
-                'Python for Beginners',
-              ),
-              _CertificateAsset(
-                'web design for beginners.png',
-                'Web Design for Beginners',
-              ),
-              _CertificateAsset(
-                'Machile Learning using python.png',
-                'Machine Learning Using Python',
-              ),
-              _CertificateAsset(
                 'agile scrum fountation.png',
                 'Agile Scrum Foundation',
-              ),
-              _CertificateAsset('oops in java.png', 'OOP in Java'),
-              _CertificateAsset(
-                'introduction to cloud computing.png',
-                'Introduction to Cloud Computing',
-              ),
-              _CertificateAsset(
-                'introduction to cyber security.png',
-                'Introduction to Cyber Security',
-              ),
-              _CertificateAsset(
-                'introduction to genarative AI badge.png',
-                'Introduction to Generative AI',
-              ),
-              _CertificateAsset(
-                'docker for beginners.png',
-                'Docker for Beginners',
-              ),
-              _CertificateAsset(
-                'cyber security essentials.png',
-                'Cyber Security Essentials',
-              ),
-              _CertificateAsset(
-                'introductio to cybersecurity-cisco.png',
-                'Cisco Cyber Security',
-              ),
-              _CertificateAsset(
-                'ui ux for beginners.png',
-                'UI/UX for Beginners',
-              ),
-              _CertificateAsset('introduction to html.png', 'HTML'),
-              _CertificateAsset('my sql tutorial.png', 'MySQL Tutorial'),
-              _CertificateAsset('programing basics.png', 'Programming Basics'),
-              _CertificateAsset(
-                'Pythonfuntamentals for beginners.png',
-                'Python Fundamentals',
-              ),
-              _CertificateAsset(
-                'python project for beginners.png',
-                'Python Project for Beginners',
-              ),
-              _CertificateAsset(
-                'introductiom to git with github.png',
-                'Git and GitHub',
-              ),
-              _CertificateAsset(
-                'cisco introduction to cyber security badge.png',
-                'Cisco — Cyber Security Badge',
-              ),
-              _CertificateAsset(
-                'cyber securty essential badges.png',
-                'Cyber Security Essential Badges',
-              ),
-              _CertificateAsset(
-                'frontend development-html.png',
-                'Front-End Development — HTML',
-              ),
-              _CertificateAsset(
-                'github for beginners badge.png',
-                'GitHub for Beginners Badge',
-              ),
-              _CertificateAsset(
-                'indrouction to python.png',
-                'Introduction to Python',
-              ),
-              _CertificateAsset(
-                'introduction to css.png',
-                'Introduction to CSS',
-              ),
-              _CertificateAsset(
-                'introduction to java.png',
-                'Introduction to Java',
-              ),
-              _CertificateAsset(
-                'introduction to sql.png',
-                'Introduction to SQL',
               ),
             ],
           ),
@@ -2362,41 +2248,6 @@ class _MoreSection extends StatelessWidget {
                 Icons.location_on_outlined,
                 'Location',
                 'Oddamavadi, Batticaloa, Sri Lanka',
-              ),
-              const _DetailRow(
-                Icons.phone_outlined,
-                'Phone',
-                '+94 74 121 8316',
-              ),
-              const SizedBox(height: 12),
-              GestureDetector(
-                onTap: onCopyEmail,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 9,
-                  ),
-                  decoration: BoxDecoration(
-                    color: _P.cyan.withValues(alpha: 0.08),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: _P.cyan.withValues(alpha: 0.25)),
-                  ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.copy_rounded, size: 15, color: _P.cyan),
-                      SizedBox(width: 7),
-                      Text(
-                        'Copy Email',
-                        style: TextStyle(
-                          color: _P.cyan,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ],
           ),

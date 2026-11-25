@@ -33,7 +33,7 @@ class _Member3ScreenState extends State<Member3Screen> {
     'Time Management',
   ];
 
-  final List> _techSkillGroups = const [
+  final List<Map<String, dynamic>> _techSkillGroups = const [
     {
       'title': 'Quality Assurance & Testing',
       'icon': Icons.verified_outlined,
@@ -61,7 +61,7 @@ class _Member3ScreenState extends State<Member3Screen> {
     },
   ];
 
-  final List> _projects = const [
+  final List<Map<String, dynamic>> _projects = const [
     {
       'title': 'SecureTrack SL',
       'role': 'Full-Stack Developer & QA Tester',
@@ -190,7 +190,7 @@ class _Member3ScreenState extends State<Member3Screen> {
             ),
             child: ClipOval(
               child: Image.asset(
-                'lib/assets/images/23IT0482.jpg',
+                'lib/assets/images/23IT0482.jpg.jpeg',
                 width: 112,
                 height: 112,
                 fit: BoxFit.cover,
