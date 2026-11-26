@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,7 +17,6 @@ class _Member7ScreenState extends State<Member7Screen> {
   String _selectedSkillCategory = 'All';
   int? _expandedProjectIndex;
   bool _isLiked = false;
-  int _likeCount = 52;
 
   // ─── Theme Palette: Network Tech Indigo & Rose Coral ─────────────────────
   static const Color _primaryIndigo = Color(0xFF4338CA);
@@ -37,7 +36,6 @@ class _Member7ScreenState extends State<Member7Screen> {
   static const String _preferredName = 'Gimhani Jayarathna';
   static const String _regNumber = '23IT0488';
   static const String _roleTitle = 'Network Engineer (Intern)';
-  static const String _division = 'Division of Information Technology';
   static const String _institute = 'Institute of Technology, University of Moratuwa (ITUM)';
   static const String _email = 'wdcgjayarathna@gmail.com';
   static const String _phone = '+94 74 112 9244';
@@ -250,7 +248,6 @@ class _Member7ScreenState extends State<Member7Screen> {
           onPressed: () {
             setState(() {
               _isLiked = !_isLiked;
-              _likeCount += _isLiked ? 1 : -1;
             });
             _showSnackBar(_isLiked ? 'Profile saved to favorites!' : 'Unfavorited');
           },

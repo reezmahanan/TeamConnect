@@ -61,11 +61,11 @@ profile page with a unique design.
 |---|---|---|---|
 | 23IT0480 | Ms M R Hanan | member1_screen.dart | Completed |
 | 23IT0481 | Ms W R K W Hansamali | member2_screen.dart | Completed |
-| 23IT0482 | Ms H M C B Herath | member3_screen.dart | Pending |
+| 23IT0482 | Ms H M C B Herath | member3_screen.dart | Completed |
 | 23IT0485 | Ms V Inthumathy | member4_screen.dart | Completed |
-| 23IT0486 | Ms R V P A Jayamali | member5_screen.dart | Pending |
-| 23IT0487 | Ms G W T Jayampathi | member6_screen.dart | Pending |
-| 23IT0488 | Ms W D C G Jayarathna | member7_screen.dart | Pending |
+| 23IT0486 | Ms R V P A Jayamali | member5_screen.dart | Completed |
+| 23IT0487 | Ms G W T Jayampathi | member6_screen.dart | Completed |
+| 23IT0488 | Ms W D C G Jayarathna | member7_screen.dart | Completed |
 | 23IT0490 | Mr K A S K Kapuhenthuduwa | member8_screen.dart | Pending |
 | 23IT0491 | Ms W K Y Y Karunaratna | member9_screen.dart | Pending |
 
@@ -84,8 +84,8 @@ profile page with a unique design.
 - Individual Member 1 profile page
 - GitHub repository setup and integration
 
-The remaining eight members are responsible for implementing
-their assigned individual profile pages.
+Members 2–9 are assigned their own profile pages. See the table
+above for each profile's current status.
 
 ## Project Structure
 
@@ -93,12 +93,26 @@ their assigned individual profile pages.
 TeamConnect/
 ├── android/
 ├── ios/
+├── linux/
+├── macos/
 ├── web/
+├── windows/
 ├── assets/
-│   └── images/
+│   ├── branding/
+│   ├── inthumathy/
+│   │   ├── certificates/
+│   │   └── images/
+│   ├── jayampathi/
+│   │   └── images/
+│   └── reezma/
+│       ├── certificates/
+│       ├── images/
+│       └── svgs/
 ├── lib/
 │   ├── main.dart
 │   ├── firebase_options.dart
+│   ├── assets/
+│   │   └── images/
 │   ├── models/
 │   │   └── member.dart
 │   ├── services/
@@ -117,6 +131,10 @@ TeamConnect/
 │   │       ├── member8_screen.dart
 │   │       └── member9_screen.dart
 │   └── widgets/
+│       ├── main.dart
+│       └── member_placeholder.dart
+├── test/
+│   └── widget_test.dart
 ├── pubspec.yaml
 ├── .gitignore
 └── README.md
@@ -203,6 +221,7 @@ informing the group.
 
 A dedicated Firebase Authentication test account is provided
 for application testing.
+
 - **Email:** teamconnect@example.com
 - **Password:** TeamConnect@2026
 
@@ -269,10 +288,13 @@ where appropriate.
 
 ## Adding Profile Photographs
 
-Store your personal photograph inside:
+Store your personal photograph in the asset folder already
+registered for your profile. The shared `lib/assets/images/`
+folder is registered in `pubspec.yaml` and can be used for new
+member photographs.
 
 ```text
-assets/images/
+lib/assets/images/
 ```
 
 Use your registration number as the image filename.
@@ -280,17 +302,17 @@ Use your registration number as the image filename.
 Example:
 
 ```text
-assets/images/23IT0481.jpg
+lib/assets/images/23IT0481.jpg
 ```
 
-Reezma Hanan's existing photograph uses:
+Reezma Hanan's existing photograph is stored at:
 
 ```text
-assets/images/reezma.jpg
+assets/reezma/images/profile/reezma.jpg
 ```
 
-Ensure that the assets directory or individual image is
-registered under the existing `flutter` section in pubspec.yaml.
+If you use a different folder, register it under the existing
+`flutter` section in `pubspec.yaml`.
 
 Example:
 
@@ -304,7 +326,7 @@ flutter:
 
 Do not create a duplicate `flutter` section.
 
-After adding assets, run:
+After changing `pubspec.yaml`, run:
 
 ```bash
 flutter pub get

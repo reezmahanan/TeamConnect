@@ -507,11 +507,14 @@ class _ProfileInfo extends StatelessWidget {
             _SocialBtn(
               icon: Icons.code_rounded,
               label: 'GitHub',
+              asset: 'assets/reezma/svgs/github.svg',
               onTap: () => onLink('https://github.com/reezmahanan'),
             ),
             _SocialBtn(
               icon: Icons.work_outline_rounded,
               label: 'LinkedIn',
+              asset: 'assets/reezma/svgs/linkedin.svg',
+              preserveAssetColors: true,
               onTap: () => onLink('https://www.linkedin.com/in/reezma-hanan'),
             ),
             _SocialBtn(
@@ -572,11 +575,15 @@ class _SocialBtn extends StatelessWidget {
     required this.label,
     required this.onTap,
     this.accent = _P.cyan,
+    this.asset,
+    this.preserveAssetColors = false,
   });
   final IconData icon;
   final String label;
   final VoidCallback onTap;
   final Color accent;
+  final String? asset;
+  final bool preserveAssetColors;
 
   @override
   Widget build(BuildContext context) {
@@ -595,7 +602,18 @@ class _SocialBtn extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 16, color: accent),
+              if (asset != null)
+                SvgPicture.asset(
+                  asset!,
+                  width: 16,
+                  height: 16,
+                  fit: BoxFit.contain,
+                  colorFilter: preserveAssetColors
+                      ? null
+                      : ColorFilter.mode(accent, BlendMode.srcIn),
+                )
+              else
+                Icon(icon, size: 16, color: accent),
               const SizedBox(width: 6),
               Text(
                 label,
@@ -1050,6 +1068,8 @@ class _EducationTimeline extends StatelessWidget {
               'Institute of Technology, University of Moratuwa (ITUM), Sri Lanka',
           location: 'Diyagama, Homagama, Sri Lanka',
           detail: 'Latest Semester GPA: 3.72',
+          description:
+              'Currently pursuing the National Diploma in Information Technology.',
           logo:
               'assets/reezma/images/profile/Institute of Technolgy UOM Logo.jpg',
           accent: _P.emerald,
@@ -1060,6 +1080,7 @@ class _EducationTimeline extends StatelessWidget {
           title: 'GCE Advanced Level – Physical Science Stream',
           institution: 'BT/BC Oddamavadi Central College',
           location: 'Batticaloa, Sri Lanka',
+          description: 'GCE Advanced Level - Physical Science Stream.',
           logo: 'assets/reezma/images/profile/Odd.central College Logo.jpg',
           accent: _P.cyan,
         ),
@@ -1070,6 +1091,8 @@ class _EducationTimeline extends StatelessWidget {
           institution: 'BT/BC Oddamavadi Fathima Balika Maha Vidyalaya',
           location: 'Batticaloa, Sri Lanka',
           detail: "Result: 8 A's and B's",
+          description:
+              'GCE Ordinary Level completed with 8 A grades and B grades.',
           logo: 'assets/reezma/images/profile/Odd.Fathima Balika Logo.jpg',
           accent: _P.violet,
         ),
@@ -2171,6 +2194,43 @@ class _MoreSection extends StatelessWidget {
                 'agile scrum fountation.png',
                 'Agile Scrum Foundation',
               ),
+              _CertificateAsset(
+                'Python for beginners.png',
+                'Python for Beginners',
+              ),
+              _CertificateAsset(
+                'oops in java.png',
+                'Object-Oriented Programming in Java',
+              ),
+              _CertificateAsset('css basic.png', 'HackerRank — CSS'),
+              _CertificateAsset(
+                'cyber security essentials.png',
+                'Cyber Security Essentials',
+              ),
+              _CertificateAsset(
+                'introductio to cybersecurity-cisco.png',
+                'Cisco — Introduction to Cybersecurity',
+              ),
+              _CertificateAsset(
+                'introduction to cyber security.png',
+                'Introduction to Cyber Security',
+              ),
+              _CertificateAsset(
+                'introduction to cloud computing.png',
+                'Introduction to Cloud Computing',
+              ),
+              _CertificateAsset(
+                'introduction to ai concepts.png',
+                'Introduction to AI Concepts',
+              ),
+              _CertificateAsset(
+                'introductiom to git with github.png',
+                'Git and GitHub',
+              ),
+              _CertificateAsset(
+                'Introduction to git.png',
+                'Introduction to Git',
+              ),
             ],
           ),
         ),
@@ -2268,12 +2328,15 @@ class _MoreSection extends StatelessWidget {
                 Icons.code_rounded,
                 () => onLink('https://github.com/reezmahanan'),
                 _P.textSec,
+                asset: 'assets/reezma/svgs/github.svg',
               ),
               _LinkBtn(
                 'LinkedIn',
                 Icons.work_outline_rounded,
                 () => onLink('https://www.linkedin.com/in/reezma-hanan'),
                 _P.cyan,
+                asset: 'assets/reezma/svgs/linkedin.svg',
+                preserveAssetColors: true,
               ),
               _LinkBtn(
                 'Portfolio',
@@ -2783,11 +2846,20 @@ class _LeadershipItem extends StatelessWidget {
 }
 
 class _LinkBtn extends StatelessWidget {
-  const _LinkBtn(this.label, this.icon, this.onTap, this.color);
+  const _LinkBtn(
+    this.label,
+    this.icon,
+    this.onTap,
+    this.color, {
+    this.asset,
+    this.preserveAssetColors = false,
+  });
   final String label;
   final IconData icon;
   final VoidCallback onTap;
   final Color color;
+  final String? asset;
+  final bool preserveAssetColors;
 
   @override
   Widget build(BuildContext context) {
@@ -2803,7 +2875,18 @@ class _LinkBtn extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 15, color: color),
+            if (asset != null)
+              SvgPicture.asset(
+                asset!,
+                width: 15,
+                height: 15,
+                fit: BoxFit.contain,
+                colorFilter: preserveAssetColors
+                    ? null
+                    : ColorFilter.mode(color, BlendMode.srcIn),
+              )
+            else
+              Icon(icon, size: 15, color: color),
             const SizedBox(width: 6),
             Text(
               label,

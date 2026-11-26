@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,7 +16,6 @@ class _Member6ScreenState extends State<Member6Screen> {
   static const Color _primaryLight = Color(0xFFEEF2FF);
   static const Color _accentRose = Color(0xFFF43F5E); // Rose
   static const Color _bgScreen = Color(0xFFF8FAFC);
-  static const Color _surfaceCard = Colors.white;
   static const Color _textMain = Color(0xFF0F172A);
   static const Color _textSub = Color(0xFF475569);
   static const Color _textMuted = Color(0xFF94A3B8);
@@ -74,7 +73,7 @@ class _Member6ScreenState extends State<Member6Screen> {
               child: Image.asset(
                 'assets/jayampathi/images/profile/profile.jpg',
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => Container(
+                errorBuilder: (_, _, _) => Container(
                   width: 280,
                   height: 320,
                   color: _primaryLight,
@@ -143,7 +142,7 @@ class _Member6ScreenState extends State<Member6Screen> {
                   child: Image.asset(
                     imagePath,
                     fit: BoxFit.contain,
-                    errorBuilder: (_, __, ___) => Container(
+                    errorBuilder: (_, _, _) => Container(
                       height: 200,
                       color: _primaryLight,
                       child: const Center(
@@ -300,7 +299,7 @@ class _Member6ScreenState extends State<Member6Screen> {
                           width: 120,
                           height: 120,
                           fit: BoxFit.cover,
-                          errorBuilder: (_, __, ___) => Container(
+                          errorBuilder: (_, _, _) => Container(
                             width: 120,
                             height: 120,
                             color: _primaryLight,
@@ -1199,7 +1198,7 @@ class _Member6ScreenState extends State<Member6Screen> {
                                   width: 44,
                                   height: 44,
                                   fit: BoxFit.cover,
-                                  errorBuilder: (_, __, ___) => Center(
+                                  errorBuilder: (_, _, _) => Center(
                                     child: Icon(proj['icon'] as IconData, color: _primary, size: 20),
                                   ),
                                 )
@@ -1725,7 +1724,7 @@ class _HoverCardState extends State<_HoverCard> {
           duration: const Duration(milliseconds: 220),
           curve: Curves.easeOutCubic,
           transform: _isHovered
-              ? (Matrix4.identity()..translate(0.0, -widget.liftDistance, 0.0))
+              ? (Matrix4.identity()..translateByDouble(0.0, -widget.liftDistance, 0.0, 1.0))
               : Matrix4.identity(),
           margin: widget.margin,
           padding: widget.padding,
