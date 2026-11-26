@@ -22,7 +22,7 @@ class _Member8ScreenState extends State<Member8Screen> {
   static const Color _borderColor = Color(0xFFE2E8F0);
 
   // TODO: Update with your actual Soft Skills, Technical Skills & Talents
-  final List> _allSkills = const [
+  final List<Map<String, String>> _allSkills = const [
     {'name': 'Teamwork & Collaboration', 'category': 'Soft Skills'},
     {'name': 'Problem Solving', 'category': 'Soft Skills'},
     {'name': 'Leadership', 'category': 'Soft Skills'},
@@ -36,7 +36,7 @@ class _Member8ScreenState extends State<Member8Screen> {
     {'name': 'Sports / Photography / Music', 'category': 'Talents'},
   ];
 
-  List> get _filteredSkills {
+  List<Map<String, String>> get _filteredSkills {
     if (_selectedSkillCategory == 'All') return _allSkills;
     return _allSkills
         .where((s) => s['category'] == _selectedSkillCategory)
@@ -140,7 +140,7 @@ class _Member8ScreenState extends State<Member8Screen> {
             ),
             child: ClipOval(
               child: Image.asset(
-                'lib/assets/images/23IT0490.jpg',
+                'lib/assets/images/23IT0490.jpeg',
                 width: 110,
                 height: 110,
                 fit: BoxFit.cover,
@@ -177,10 +177,7 @@ class _Member8ScreenState extends State<Member8Screen> {
           const Text(
             'NDT Information Technology Undergraduate',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xFFE0E7FF),
-              fontSize: 14,
-            ),
+            style: TextStyle(color: Color(0xFFE0E7FF), fontSize: 14),
           ),
           const SizedBox(height: 12),
           Container(
@@ -213,18 +210,19 @@ class _Member8ScreenState extends State<Member8Screen> {
         _buildLinkChip(
           icon: Icons.code_rounded,
           label: 'GitHub',
-          onTap: () => _launchExternalUrl(‘https://github.com/aselsenath2002’),
+          onTap: () => _launchExternalUrl('https://github.com/aselsenath2002'),
         ),
         _buildLinkChip(
           icon: Icons.business_center_outlined,
           label: 'LinkedIn',
-          onTap: () =>
-              _launchExternalUrl(‘www.linkedin.com/in/asel-senath-6100a1360’),
+          onTap: () => _launchExternalUrl(
+            'https://www.linkedin.com/in/asel-senath-6100a1360',
+          ),
         ),
         _buildLinkChip(
           icon: Icons.email_outlined,
           label: 'Email Me',
-          onTap: () => _launchExternalUrl('mailto:aselsenath2002@gmail.com),
+          onTap: () => _launchExternalUrl('mailto:aselsenath2002@gmail.com'),
         ),
       ],
     );
@@ -318,7 +316,7 @@ class _Member8ScreenState extends State<Member8Screen> {
             const _DetailRow(
               icon: Icons.email_outlined,
               label: 'Email Address',
-              value: 'aselsenath2002@gmail.comlin',
+              value: 'aselsenath2002@gmail.com',
             ),
           ],
         ],
@@ -495,10 +493,7 @@ class _DetailRow extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: const TextStyle(
-                  color: Color(0xFF64748B),
-                  fontSize: 12,
-                ),
+                style: const TextStyle(color: Color(0xFF64748B), fontSize: 12),
               ),
               const SizedBox(height: 2),
               Text(
