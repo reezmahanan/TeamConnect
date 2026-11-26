@@ -72,6 +72,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/branding/
+    - assets/images/
     - assets/reezma/certificates/
     - assets/reezma/images/profile/
     - assets/reezma/images/projects/
