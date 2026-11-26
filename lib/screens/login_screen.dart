@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../services/auth_service.dart';
 
@@ -69,8 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Image.asset(
-                      'assets/branding/teamconnect_logo.png',
+                    SvgPicture.asset(
+                      'assets/branding/teamconnect_logo.svg',
                       height: 150,
                       fit: BoxFit.contain,
                     ),
