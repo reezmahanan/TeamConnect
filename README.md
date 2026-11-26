@@ -108,6 +108,8 @@ TeamConnect/
 │       ├── certificates/
 │       ├── images/
 │       └── svgs/
+├── images/
+│   └── screenshots/
 ├── lib/
 │   ├── main.dart
 │   ├── firebase_options.dart
@@ -527,16 +529,22 @@ Update any outdated tests so that they reflect the application.
 
 ## Screenshots
 
-Application screenshots will be added after all individual
-profile pages are completed and integrated.
+### Login
 
-Screenshots will include:
+![Login screen](images/screenshots/login%20page.png)
 
-- Login Screen
-- Invalid Login Validation
-- Home Screen
-- Nine Individual Profile Pages
-- Logout Confirmation
+![Login validation](images/screenshots/login%20validation.png)
+
+### Home
+
+![Home page](images/screenshots/Home%20Page.png)
+
+### Logout
+
+![Logout confirmation](images/screenshots/logout%20confirmation.png)
+
+Individual profile screenshots will be added after all profile
+pages are completed and integrated.
 
 ## Project Timeline
 
