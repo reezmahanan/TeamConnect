@@ -87,9 +87,14 @@ profile page with a unique design.
 - Profile navigation
 - Individual Member 1 profile page
 - GitHub repository setup and integration
+- Application branding and logo integration
+- Firebase Hosting configuration and deployment
+- Application integration and testing
 
-Members 2–9 are assigned their own profile pages. See the table
-above for each profile's current status.
+Members 2–9 were individually responsible for
+designing and developing their own unique profile
+screens. Individual contributions are recorded
+in the GitHub commit history.
 
 ## Project Structure
 
