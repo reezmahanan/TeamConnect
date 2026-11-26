@@ -66,7 +66,7 @@ profile page with a unique design.
 | 23IT0486 | Ms R V P A Jayamali | member5_screen.dart | Completed |
 | 23IT0487 | Ms G W T Jayampathi | member6_screen.dart | Completed |
 | 23IT0488 | Ms W D C G Jayarathna | member7_screen.dart | Completed |
-| 23IT0490 | Mr K A S K Kapuhenthuduwa | member8_screen.dart | Pending |
+| 23IT0490 | Mr K A S K Kapuhenthuduwa | member8_screen.dart | Completed |
 | 23IT0491 | Ms W K Y Y Karunaratna | member9_screen.dart | Pending |
 
 ### Common Application Development

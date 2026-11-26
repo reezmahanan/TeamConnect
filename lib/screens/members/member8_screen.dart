@@ -216,7 +216,8 @@ class _Member8ScreenState extends State<Member8Screen> {
           icon: Icons.business_center_outlined,
           label: 'LinkedIn',
           onTap: () => _launchExternalUrl(
-              'https://www.linkedin.com/in/asel-senath-6100a1360'),
+            'https://www.linkedin.com/in/asel-senath-6100a1360',
+          ),
         ),
         _buildLinkChip(
           icon: Icons.email_outlined,
@@ -336,4 +337,177 @@ class _Member8ScreenState extends State<Member8Screen> {
         children: [
           const Row(
             children: [
-              Icon(Icons.school_outlined,
+              Icon(Icons.school_outlined, color: _primaryColor),
+              SizedBox(width: 10),
+              Text(
+                'Academic Qualifications',
+                style: TextStyle(
+                  color: _textDark,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          const Divider(color: _borderColor, height: 24),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: _bgColor,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'National Diploma in Technology (NDT) – IT',
+                  style: TextStyle(
+                    color: _textDark,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Institute of Technology, University of Moratuwa (ITUM)',
+                  style: TextStyle(color: _textMuted, fontSize: 13),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInteractiveSkillsCard() {
+    final categories = ['All', 'Soft Skills', 'Technical', 'Talents'];
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: _cardColor,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: _borderColor),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
+            children: [
+              Icon(Icons.star_outline_rounded, color: _primaryColor),
+              SizedBox(width: 10),
+              Text(
+                'Skills & Special Talents',
+                style: TextStyle(
+                  color: _textDark,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: categories.map((category) {
+                final isSelected = _selectedSkillCategory == category;
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: ChoiceChip(
+                    label: Text(category),
+                    selected: isSelected,
+                    selectedColor: _primaryColor,
+                    backgroundColor: _bgColor,
+                    labelStyle: TextStyle(
+                      color: isSelected ? Colors.white : _textDark,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                    ),
+                    onSelected: (_) {
+                      setState(() {
+                        _selectedSkillCategory = category;
+                      });
+                    },
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: _filteredSkills.map((skill) {
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
+                decoration: BoxDecoration(
+                  color: const Color.fromRGBO(217, 119, 6, 0.1),
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: const Color.fromRGBO(217, 119, 6, 0.35),
+                  ),
+                ),
+                child: Text(
+                  skill['name']!,
+                  style: const TextStyle(
+                    color: _textDark,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DetailRow extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String value;
+
+  const _DetailRow({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, color: const Color(0xFF64748B), size: 20),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(color: Color(0xFF64748B), fontSize: 12),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                value,
+                style: const TextStyle(
+                  color: Color(0xFF1E293B),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
