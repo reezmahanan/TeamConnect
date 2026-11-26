@@ -12,6 +12,10 @@ Moratuwa (ITUM).
 The application provides a secure authentication system, a shared
 home screen, and individual member profile pages with unique designs.
 
+## Live Application
+
+[Open TeamConnect](https://team-connect-76385.web.app/)
+
 ## Academic Information
 
 - **Institute:** Institute of Technology, University of Moratuwa
@@ -543,8 +547,6 @@ Update any outdated tests so that they reflect the application.
 
 ![Logout confirmation](images/screenshots/logout%20confirmation.png)
 
-Individual profile screenshots will be added after all profile
-pages are completed and integrated.
 
 ## Project Timeline
 
