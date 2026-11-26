@@ -497,23 +497,23 @@ the assignment evaluation.
 
 ## Testing Checklist
 
-- [ ] Application launches successfully
-- [ ] Valid login credentials work
-- [ ] Invalid credentials display an error message
-- [ ] Authentication session is maintained
-- [ ] Successful login opens the home screen
-- [ ] All nine members are displayed
-- [ ] Member search functions correctly
-- [ ] All nine individual profile pages are completed
-- [ ] All profile photographs display correctly
-- [ ] Individual profile designs are unique
-- [ ] State management functionality works
-- [ ] Back navigation works correctly
-- [ ] Logout returns to the login screen
-- [ ] Android and web layouts are responsive
-- [ ] External links work correctly
-- [ ] All member contributions are merged
-- [ ] Lecturer test account is verified
+- [x] Application launches successfully
+- [x] Valid login credentials work
+- [x] Invalid credentials display an error message
+- [x] Authentication session is maintained
+- [x] Successful login opens the home screen
+- [x] All nine members are displayed
+- [x] Member search functions correctly
+- [x] All nine individual profile pages are completed
+- [x] All profile photographs display correctly
+- [x] Individual profile designs are unique
+- [x] State management functionality works
+- [x] Back navigation works correctly
+- [x] Logout returns to the login screen
+- [x] Android and web layouts are responsive
+- [x] External links work correctly
+- [x] All member contributions are merged
+- [x] Lecturer test account is verified
 
 ## Code Quality
 
