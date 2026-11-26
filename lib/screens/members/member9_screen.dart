@@ -12,7 +12,7 @@ class _Member9ScreenState extends State<Member9Screen> {
   bool dark = true;
   int selected = 0;
   // Replace this with your address before submission.
-  static const address = 'To be updated';
+  static const address = 'Isuru Uyana, Marawila Road, Nattandiya';
   static const photo = 'assets/images/23IT0491.jpg';
   static const email = 'yuhansiyuthmi@gmail.com';
   Color get background => dark ? const Color(0xFF15121F) : const Color(0xFFF5EFFA);
