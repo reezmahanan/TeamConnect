@@ -40,8 +40,11 @@ home screen, and individual member profile pages with unique designs.
 - Interactive UI using StatefulWidget and setState()
 - Profile photographs
 - Functional professional and social media links
-- Logout confirmation
+- Secure logout with confirmation dialog
+- Custom TeamConnect branding and logo
+- Responsive mobile and desktop layouts
 - Android and web compatibility
+- Live deployment using Firebase Hosting
 
 ## Technology Stack
 
