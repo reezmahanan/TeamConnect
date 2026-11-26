@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'firebase_options.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
@@ -50,8 +51,8 @@ class AuthGate extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.asset(
-                    'assets/branding/teamconnect_logo.png',
+                  SvgPicture.asset(
+                    'assets/branding/teamconnect_logo.svg',
                     width: 260,
                     fit: BoxFit.contain,
                   ),
